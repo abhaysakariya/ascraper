@@ -39,7 +39,7 @@ Want To Know How?? Get Started With Me.
 Clone the project
 
 ```bash
-  git clone https://github.com/ABHAY-SAKARIYA/ScrapA.git
+  git clone https://github.com/abhaysakariya/ScrapA.git
 ```
 
 Go to the project directory
