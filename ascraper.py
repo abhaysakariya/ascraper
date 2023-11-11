@@ -141,7 +141,7 @@ class File:
 
 # creating Web Scraper 
 
-class scrapA:
+class scrapa:
 
     def __init__(self) -> None:
         pass
@@ -213,7 +213,7 @@ class scrapA:
                                     File.Html.write(filename=f"{self._filename}.html", data=userReqEle.prettify(), encoding=self._encoding)
                                 except:
                                     raise encodingErr()
-                                rprint(f"[green bold] Data gathered Successfully and Saved To {self._filename}.html[/green bold]")
+                            rprint(f"[green bold] Data gathered Successfully and Saved To {self._filename}.html[/green bold]")
                         except:
                             raise EleNotFoundErr(self._selector[self._userSelectorKey[0]])
                     elif self._userSelectorKey[0] == "xpath":
@@ -252,7 +252,7 @@ class scrapA:
                                             File.Html.write(filename=f"{self._filename}.html", data=userReqEle.prettify(), encoding=self._encoding)
                                         except:
                                             raise encodingErr()
-                                        rprint(f"[green bold] Data gathered Successfully and Saved To {self._filename}.html[/green bold]")
+                                    rprint(f"[green bold] Data gathered Successfully and Saved To {self._filename}.html[/green bold]")
                                 except:
                                     raise EleNotFoundErr(self._selector[self._userSelectorKey[0]])
                             elif type(self._selector[self._userSelectorKey[0]]) == list:
@@ -278,7 +278,7 @@ class scrapA:
                 
                 except Exception as e:
                     raise rprint(f"[red bold]{e}[/red bold]")
-                count+=1
+               
         except Exception as e:
             rprint(f"[red bold] error occured provided {userLinks} url not found caused : {e} ")
 
@@ -301,7 +301,7 @@ class scrapA:
                                 File.Html.write(filename=f"{self._filename}.html", data=f"{userReqEle.prettify()}",encoding=self._encoding)
                             except:
                                 raise encodingErr()
-                            rprint(f"[green bold] Data gathered Successfully and Saved To {self._filename}.html[/green bold]")
+                        rprint(f"[green bold] Data gathered Successfully and Saved To {self._filename}.html[/green bold]")
                     except:
                         raise EleNotFoundErr(self._selector[self._userSelectorKey[0]])
                 else:
@@ -349,7 +349,7 @@ class scrapA:
                                         File.Html.write(filename=f"{self._filename}.html",data=f"{userEle.prettify()}",encoding=self._encoding)
                                     except:
                                         raise encodingErr()
-                                    rprint("[green] data saved successfuly[/green]")
+                                rprint("[green] data saved successfuly[/green]")
                             except:
                                 raise EleNotFoundErr(self._selector[self._userSelectorKey[0]])
                         elif type(self._selector[self._userSelectorKey[0]]) == list:
@@ -361,7 +361,7 @@ class scrapA:
                                             File.Html.write(filename=f"{self._filename}.html",data=f"{userEle.prettify()}",encoding=self._encoding)
                                         except:
                                             raise encodingErr()
-                                        rprint("[green] data saved successfuly[/green]")
+                                    rprint("[green] data saved successfuly[/green]")
                                     break
                             except:
                                 raise EleNotFoundErr(self._selector[self._userSelectorKey[0]])
