@@ -39,7 +39,7 @@ Want To Know How?? Get Started With Me.
 Clone the project
 
 ```bash
-  [https://github.com/abhaysakariya/ascraper.git]
+  git clone https://github.com/abhaysakariya/ascraper.git
 ```
 
 Go to the project directory
