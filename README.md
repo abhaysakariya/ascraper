@@ -85,7 +85,7 @@ Now You Are Ready To Go...
 #### To Capture Single And Static WebPage Usign Css Selector
 
 ```bash
-  from ascraper.ascraper import scrapA
+  from ascraper.ascraper import scrapa
   url = "url"
   selector = {'css':'div .class #id'}
   scrap = scrapA()
@@ -94,7 +94,7 @@ Now You Are Ready To Go...
 #### To Capture Single And Dynamic WebPage Usign Css Selector
 
 ```bash
-  from ascraper.ascraper import scrapA
+  from ascraper.ascraper import scrapa
   url = "url"
   selector = {'css':'div .class #id'}
   scrap = scrapA()
@@ -103,7 +103,7 @@ Now You Are Ready To Go...
 #### To Capture Mutliple And Static WebPage Usign Css Selector
 
 ```bash
-  from ascraper.ascraper import scrapA
+  from ascraper.ascraper import scrapa
   url = ["url","url"]
   selector = {'css':'div .class #id'}
   scrap = scrapA()
@@ -112,7 +112,7 @@ Now You Are Ready To Go...
 #### To Capture Mutliple And static WebPage Usign xpath Selector
 
 ```bash
-  from ascraper.ascraper import scrapA
+  from ascraper.ascraper import scrapa
   url = ["url","url"]
   selector = {'xpath':'//div[@class='class']'}
   scrap = scrapA()
@@ -122,7 +122,7 @@ Now You Are Ready To Go...
 #### To Capture Mutliple And Dynamic WebPage Usign Css Selector
 
 ```bash
-  from ascraper.ascraper import scrapA
+  from ascraper.ascraper import scrapa
   url = ["url","url"]
   selector = {'css':'div .class #id'}
   # you can also provide multiple selector only in mode m
@@ -134,7 +134,7 @@ Now You Are Ready To Go...
 #### To Capture Mutliple And Dynamic WebPage Usign xpath Selector
 
 ```bash
-  from ascraper.ascraper import scrapA
+  from ascraper.ascraper import scrapa
   url = ["url","url"]
   selector = {'xpath':'//div[@class='class']'}
   # you can also provide multiple selector only in mode m
