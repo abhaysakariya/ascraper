@@ -88,7 +88,7 @@ Now You Are Ready To Go...
   from ascraper.ascraper import scrapa
   url = "url"
   selector = {'css':'div .class #id'}
-  scrap = scrapA()
+  scrap = scrapa()
   scrap.captureData(url=url,selector=selector,mode='s',captureType="static",filename="test",encoding="utf-8")
 ```
 #### To Capture Single And Dynamic WebPage Usign Css Selector
@@ -97,7 +97,7 @@ Now You Are Ready To Go...
   from ascraper.ascraper import scrapa
   url = "url"
   selector = {'css':'div .class #id'}
-  scrap = scrapA()
+  scrap = scrapa()
   scrap.captureData(url=url,selector=selector,mode='s',captureType="dynamic",filename="test",encoding="utf-8")
 ```
 #### To Capture Mutliple And Static WebPage Usign Css Selector
@@ -106,7 +106,7 @@ Now You Are Ready To Go...
   from ascraper.ascraper import scrapa
   url = ["url","url"]
   selector = {'css':'div .class #id'}
-  scrap = scrapA()
+  scrap = scrapa()
   scrap.captureData(url=url,selector=selector,mode='s',captureType="dynamic",filename="test",encoding="utf-8")
 ```
 #### To Capture Mutliple And static WebPage Usign xpath Selector
@@ -115,7 +115,7 @@ Now You Are Ready To Go...
   from ascraper.ascraper import scrapa
   url = ["url","url"]
   selector = {'xpath':'//div[@class='class']'}
-  scrap = scrapA()
+  scrap = scrapa()
   scrap.captureData(url=url,selector=selector,mode='s',captureType="dynamic",filename="test",encoding="utf-8")
 ```
 
@@ -127,7 +127,7 @@ Now You Are Ready To Go...
   selector = {'css':'div .class #id'}
   # you can also provide multiple selector only in mode m
   # selector = {'css':["first","second"]}
-  scrap = scrapA()
+  scrap = scrapa()
   scrap.captureData(url=url,selector=selector,mode='m',captureType="dynamic",filename="test",encoding="utf-8")
 ```
 
@@ -139,7 +139,7 @@ Now You Are Ready To Go...
   selector = {'xpath':'//div[@class='class']'}
   # you can also provide multiple selector only in mode m
   # selector = {'xpath':["first","second"]}
-  scrap = scrapA()
+  scrap = scrapa()
   scrap.captureData(url=url,selector=selector,mode='m',captureType="dynamic",filename="test",encoding="utf-8")
 ```
 
