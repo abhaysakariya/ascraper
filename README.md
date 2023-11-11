@@ -2,7 +2,7 @@
 # Hi, I'm Abhay! 👋
 
 
-# ScrapA
+# ascraper
 
 This Is An Usefull Tool For The Web Scraper Who Are Bored Of Writing Code For Different Websites To Scrap The Data Init.
 ScrapA DO This Task For You Easily Just You Have To Write Few Lines Of Code And Sometime Only One Line Of Code Also....This Will Also Take Care Of File Management And Make File Input / Output Easy For You....
@@ -63,7 +63,7 @@ Install dependencies
 Install ScrapA using pip
 
 ```bash
-  pip install scrapA
+  pip install ascraper
 ```
 Now You Are Ready To Go...
 
@@ -85,56 +85,62 @@ Now You Are Ready To Go...
 #### To Capture Single And Static WebPage Usign Css Selector
 
 ```bash
-  from scrapA import scrapA
+  from ascraper.ascraper import scrapA
   url = "url"
   selector = {'css':'div .class #id'}
-  scrapA.captureData(url=url,selector=selector,mode='s',captureType="static",filename="test",encoding="utf-8")
+  scrap = scrapA()
+  scrap.captureData(url=url,selector=selector,mode='s',captureType="static",filename="test",encoding="utf-8")
 ```
 #### To Capture Single And Dynamic WebPage Usign Css Selector
 
 ```bash
-  from scrapA import scrapA
+  from ascraper.ascraper import scrapA
   url = "url"
   selector = {'css':'div .class #id'}
-  scrapA.captureData(url=url,selector=selector,mode='s',captureType="dynamic",filename="test",encoding="utf-8")
+  scrap = scrapA()
+  scrap.captureData(url=url,selector=selector,mode='s',captureType="dynamic",filename="test",encoding="utf-8")
 ```
 #### To Capture Mutliple And Static WebPage Usign Css Selector
 
 ```bash
-  from scrapA import scrapA
+  from ascraper.ascraper import scrapA
   url = ["url","url"]
   selector = {'css':'div .class #id'}
-  scrapA.captureData(url=url,selector=selector,mode='s',captureType="dynamic",filename="test",encoding="utf-8")
+  scrap = scrapA()
+  scrap.captureData(url=url,selector=selector,mode='s',captureType="dynamic",filename="test",encoding="utf-8")
 ```
 #### To Capture Mutliple And static WebPage Usign xpath Selector
 
 ```bash
-  from scrapA import scrapA
+  from ascraper.ascraper import scrapA
   url = ["url","url"]
   selector = {'xpath':'//div[@class='class']'}
-  scrapA.captureData(url=url,selector=selector,mode='s',captureType="dynamic",filename="test",encoding="utf-8")
+  scrap = scrapA()
+  scrap.captureData(url=url,selector=selector,mode='s',captureType="dynamic",filename="test",encoding="utf-8")
 ```
 
 #### To Capture Mutliple And Dynamic WebPage Usign Css Selector
 
 ```bash
-  from scrapA import scrapA
+  from ascraper.ascraper import scrapA
   url = ["url","url"]
   selector = {'css':'div .class #id'}
   # you can also provide multiple selector only in mode m
   # selector = {'css':["first","second"]}
-  scrapA.captureData(url=url,selector=selector,mode='m',captureType="dynamic",filename="test",encoding="utf-8")
+  scrap = scrapA()
+  scrap.captureData(url=url,selector=selector,mode='m',captureType="dynamic",filename="test",encoding="utf-8")
 ```
 
 #### To Capture Mutliple And Dynamic WebPage Usign xpath Selector
 
 ```bash
-  from scrapA import scrapA
+  from ascraper.ascraper import scrapA
   url = ["url","url"]
   selector = {'xpath':'//div[@class='class']'}
   # you can also provide multiple selector only in mode m
   # selector = {'xpath':["first","second"]}
-  scrapA.captureData(url=url,selector=selector,mode='m',captureType="dynamic",filename="test",encoding="utf-8")
+  scrap = scrapA()
+  scrap.captureData(url=url,selector=selector,mode='m',captureType="dynamic",filename="test",encoding="utf-8")
 ```
 
 ### CaptureData Manually
@@ -142,15 +148,16 @@ Now You Are Ready To Go...
 #### To Capture Data Manually Using ScrapAManual
 
 ```bash
-  from scrapA import ScrapAManual
+  from ascraper.ascraper import ScrapAManual
   url = "url"
   selector = {'selector':'value'} # selector can be any from one of these class, id, tag, xpath
+  ScrapAManual = ScrapAManual()
   ScrapAManual.Initialize() # this is required to initialize the scrapa web browser
   ScrapAManual.Url(url) # pass the url of the webpage
   ele = ScrapAManual.find_element(selector) # return the element you want from webpage in selenium type
   ScrapAManual.html() # convert element you finded from selenium type to html 
-  #if you want to click any element then
   ScrapAManual.Wait(5) # to wait for some second before going forward value in second.
+  #if you want to click any element then
   clickele = ScrapAManual.find_element(selector)
   ScrapA.click(clickele)
 ```
@@ -167,7 +174,7 @@ Now You Are Ready To Go...
 | `css`      | `str` | **Required**. Css selector through which the data could be filtered for eg if we want all the img tag from html then type `img` or class or id or any other attribute it has. |
 
 ```bash
-  from scrapA import Filter
+  from ascraper.ascraper import Filter
   filt = Filter("Filename","css element") # find the element in the file provided
   
   filt.parse() # parses the finded element to readable form
@@ -185,6 +192,6 @@ Please adhere to this project's `code of conduct`.
 
 ## Feedback
 
-If you have any feedback, please reach out to us at abhay.work233@gmail.com
+If you have any feedback, please reach out to us at abhaysakariya3@gmail.com
 
 
