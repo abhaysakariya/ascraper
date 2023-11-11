@@ -39,13 +39,13 @@ Want To Know How?? Get Started With Me.
 Clone the project
 
 ```bash
-  git clone https://github.com/abhaysakariya/ScrapA.git
+  [https://github.com/abhaysakariya/ascraper.git]
 ```
 
 Go to the project directory
 
 ```bash
-  cd ScrapA
+  cd ascraper
 ```
 
 Install dependencies
