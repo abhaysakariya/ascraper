@@ -181,6 +181,33 @@ Now You Are Ready To Go...
   link = filt.Get("href") # .ge("html attribute you want") as i want link from a tag i given 'href'.
   title = filt.Text() # gives the text inside the elements parsed.
 ```
+
+
+### Wait_ter
+
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `Loc`      | `str` | **Required**. Define the location where the data is going to Save.. |
+| `wait_time`      | `in` | **Optional**. Define How much Time to wait per Download in seconds.  `Default : 30` |
+| `max_attempt`  |  `int`  |**Optional**. Define the maximum Attempts try to wait then return the Program,  `Default : 10`|
+| `log`  |  `bool`  | **Optional**. Define True If the User Want to Log the Detail of wait time and all or not, `Default : False`|
+
+```bash
+  from ascraper.ascraper import wait_ter
+
+  # This will wait for total of 100secs 10sec per each attempt and break after the max_attempt reached. and log statement to CMD.
+  wait_ter(
+          Loc="downloadLocation",
+          wait_time=10,
+          max_attempt=10,
+          log=True
+          )
+
+```
+
+
+
 ## Contributing
 
 Contributions are always welcome!
