@@ -1,13 +1,14 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-from bs4 import BeautifulSoup
-import pandas as pd
-import requests
-import time
+import os
 import json
+import time
+import requests
+import pandas as pd
+from bs4 import BeautifulSoup
+from selenium import webdriver
 from rich import print as rprint
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
 
 
 # Declaring Common Error :
@@ -557,3 +558,58 @@ class Filter:
             raise GetErr()
 
 
+
+class Wait_ter:
+    """
+        ## Wait_ter
+        ### This Class is to wait till the download gets completed!!
+        #### Whenever we Putting Web Scraping On Automation.. or Automatic Download And Dont want Scraper to Run Further Until one Task Is Completed..  This Class Can be Used.
+
+        - Parameters 
+            - `Loc`         : `str` : Define the location where the data is going to Save. `Required`
+            - `wait_time`   : `int` : Define How much Time to wait per Download in seconds.  `Default : 30` 
+            - `max_attempt` : `int` : Define the maximum Attempts try to wait then return the Program,  `Default : 10`
+            - `log`         : `bool`: Define If the User Want to Log the Detail of wait time and all or not, `Default : False`
+
+        - Return `None`
+    """
+
+    def __init__(waiter,
+            Loc : str,
+            wait_time : int = 30,
+            max_attempt : int = 10,
+            log : bool = False) -> None:
+        
+        waiter.Keyword_list = [".crdownload","unconfirmed"]
+        waiter.attempts = 1
+
+        if type(max_attempt) != int:
+            print(f"Max_attempt is Expecting The Type `int` Got {type(max_attempt)}")
+            return
+        
+        if type(wait_time) != int:
+            print(f"wait_time is Expecting The Type `int` Got {type(wait_time)}")
+            return
+        
+        if type(Loc) != str:
+            print(f"Loc is Expecting The Type `str` Got {type(Loc)}")
+            return
+        
+
+        while waiter.attempts <= max_attempt:
+            unconfirmed_files = [file for file in os.listdir(Loc) if [True for k in waiter.Keyword_list if k in file.lower()]]
+
+            if unconfirmed_files :
+                if log == True:
+                    print(f"Waiting For {wait_time}sec, attempt {waiter.attempts}")
+                time.sleep(wait_time)
+                waiter.attempts += 1
+            else:
+                if log == True:
+                    print(f"Download Completed, Exiting Wait_ter.")
+                break
+        else:
+            if log == True:
+                print(f"Maximum Attempt Reached, Maybe Download Not Get Completed. Now Exiting From Wait_ter ")
+            
+        
